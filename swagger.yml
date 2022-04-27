@@ -14,9 +14,84 @@ paths:
     get:
       summary: Generate token
       description: Generate token that can be used for validation in the Catalyst Experience App
+
       responses:
         "200":
           description: A JSON object containing the token
+          content:
+            application/json:
+              schema:
+                type: object
+
+        "401":
+          description: A JSON object requesting the client to provide Authorization data
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /validate:
+    post:
+      summary: Validate token
+      description: Validate a token, it can be used to login
+
+      responses:
+        "200":
+          description: A JSON object indicating success or failure
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /recall:
+    post:
+      summary: Disable a token
+      description: Disable(recall) a token
+
+      responses:
+        "200":
+          description: A JSON object indicating success or failure
+          content:
+            application/json:
+              schema:
+                type: object
+
+        "404":
+          description: A JSON object indicating the token was not found
+          content:
+            application/json:
+              schema:
+                type: object
+
+        "401":
+          description: A JSON object requesting the client to provide Authorization data
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /active:
+    get:
+      summary: List all active tokens
+      description: List tokens  that have not expired or recalled
+
+      responses:
+        "200":
+          description: A JSON object containing an array of token objects
+          content:
+            application/json:
+              schema:
+                type: object
+
+        "404":
+          description: A JSON object indicating the tokens were not found
+          content:
+            application/json:
+              schema:
+                type: object
+
+        "401":
+          description: A JSON object requesting the client to provide Authorization data
           content:
             application/json:
               schema:
