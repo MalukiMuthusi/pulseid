@@ -12,6 +12,9 @@ servers:
 paths:
   /generate:
     get:
+      security:
+        - basicAuth: []
+
       summary: Generate token
       description: Generate token that can be used for validation in the Catalyst Experience App
 
@@ -25,6 +28,12 @@ paths:
 
         "401":
           description: A JSON object requesting the client to provide Authorization data
+
+          headers:
+            WWW-Authenticate:
+              schema:
+                type: string
+
           content:
             application/json:
               schema:
@@ -45,6 +54,9 @@ paths:
 
   /recall:
     post:
+      security:
+        - basicAuth: []
+
       summary: Disable a token
       description: Disable(recall) a token
 
@@ -65,6 +77,12 @@ paths:
 
         "401":
           description: A JSON object requesting the client to provide Authorization data
+
+          headers:
+            WWW-Authenticate:
+              schema:
+                type: string
+
           content:
             application/json:
               schema:
@@ -72,6 +90,9 @@ paths:
 
   /active:
     get:
+      security:
+        - basicAuth: []
+
       summary: List all active tokens
       description: List tokens  that have not expired or recalled
 
@@ -92,7 +113,19 @@ paths:
 
         "401":
           description: A JSON object requesting the client to provide Authorization data
+
+          headers:
+            WWW-Authenticate:
+              schema:
+                type: string
+
           content:
             application/json:
               schema:
                 type: object
+
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
