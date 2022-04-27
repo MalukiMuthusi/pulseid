@@ -1,0 +1,23 @@
+openapi: 3.0.0
+
+info:
+  title: App Invite Service
+  description: A service that facilitates the invite token generation and validation for the Catalyst Experience App
+  version: 0.0.1
+
+servers:
+  - url: http://localhost:8080
+    description: Local Development environment
+
+paths:
+  /generate:
+    get:
+      summary: Generate token
+      description: Generate token that can be used for validation in the Catalyst Experience App
+      responses:
+        "200":
+          description: A JSON object containing the token
+          content:
+            application/json:
+              schema:
+                type: object
