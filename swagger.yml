@@ -140,6 +140,42 @@ paths:
               schema:
                 type: object
 
+  /inactive:
+    get:
+      security:
+        - basicAuth: []
+
+      summary: List all inactive tokens
+      description: List tokens  that have expired/recalled
+
+      responses:
+        "200":
+          description: A JSON object containing an array of token objects
+          content:
+            application/json:
+              schema:
+                type: object
+
+        "404":
+          description: A JSON object indicating the tokens were not found
+          content:
+            application/json:
+              schema:
+                type: object
+
+        "401":
+          description: A JSON object requesting the client to provide Authorization data
+
+          headers:
+            WWW-Authenticate:
+              schema:
+                type: string
+
+          content:
+            application/json:
+              schema:
+                type: object
+
 components:
   securitySchemes:
     basicAuth:

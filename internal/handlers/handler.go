@@ -23,6 +23,9 @@ func SetUpRouter() *gin.Engine {
 	active := Active{}
 	r.GET("/active", active.Handle)
 
+	inactive := Inactive{}
+	r.GET("/inactive", inactive.Handle)
+
 	return r
 }
 
