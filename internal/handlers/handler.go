@@ -20,6 +20,9 @@ func SetUpRouter() *gin.Engine {
 	recall := Recall{}
 	r.GET("/recall/:token", recall.Handle)
 
+	active := Active{}
+	r.GET("/active", active.Handle)
+
 	return r
 }
 
