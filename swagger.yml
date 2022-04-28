@@ -39,10 +39,18 @@ paths:
               schema:
                 type: object
 
-  /validate:
-    post:
+  /validate/{token}:
+    get:
       summary: Validate token
       description: Validate a token, it can be used to login
+
+      parameters:
+        - in: path
+          name: token
+          schema:
+            type: string
+          required: true
+          description: The token to be validated
 
       responses:
         "200":

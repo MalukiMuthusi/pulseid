@@ -11,7 +11,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestHandle(t *testing.T) {
+func TestGenerate(t *testing.T) {
 	router := handlers.SetUpRouter()
 
 	w := httptest.NewRecorder()
