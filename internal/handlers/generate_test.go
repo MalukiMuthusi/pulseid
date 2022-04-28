@@ -1,7 +1,9 @@
 package handlers_test
 
 import (
+	"encoding/base64"
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
@@ -21,13 +23,17 @@ func TestGenerate(t *testing.T) {
 		assert.Fail(t, "failed to create a new request in test")
 	}
 
+	credentials := base64.StdEncoding.EncodeToString([]byte("username:password"))
+
+	req.Header.Add("Authorization", fmt.Sprintf("Basic %s", credentials))
+
 	router.ServeHTTP(w, req)
 
 	assert.Equal(t, http.StatusNotImplemented, w.Code)
 
 	expectedRes := map[string]interface{}{"message": "not implemented"}
 
-	var res map[string]interface{}
+	var res interface{}
 
 	b, err := ioutil.ReadAll(w.Body)
 

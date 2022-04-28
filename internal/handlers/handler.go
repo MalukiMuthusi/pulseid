@@ -11,8 +11,12 @@ func SetUpRouter() *gin.Engine {
 
 	gin.DebugPrintRouteFunc = DebugPrintRoute
 
+	auth := Auth{}
+
 	generate := Generate{}
-	r.GET("/generate", generate.Handle)
+	generateAPI := r.Group("/generate")
+	generateAPI.Use(auth.Middleware())
+	generateAPI.GET("", generate.Handle)
 
 	validate := Validate{}
 	r.GET("/validate/:token", validate.Handle)
