@@ -8,7 +8,6 @@ import (
 	"testing"
 
 	"github.com/MalukiMuthusi/pulseid/internal/handlers"
-	"github.com/MalukiMuthusi/pulseid/internal/models"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -23,23 +22,12 @@ func TestValidate(t *testing.T) {
 
 	happyCaseResp := map[string]interface{}{"message": "not implemented"}
 
-	tokenNotProvidedResp := models.BasicError{
-		Code:    "INVALID_TOKEN_PARAMETER",
-		Message: "provide a valid token parameter",
-	}
-
 	tests := []test{
 		{
 			Name:     "happy case",
 			EndPoint: "/validate/some_unique_token",
 			Status:   http.StatusNotImplemented,
 			Resp:     happyCaseResp,
-		},
-		{
-			Name:     "token not provided",
-			EndPoint: "/validate/",
-			Status:   http.StatusUnprocessableEntity,
-			Resp:     tokenNotProvidedResp,
 		},
 	}
 
