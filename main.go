@@ -9,9 +9,9 @@ import (
 	"os/signal"
 	"time"
 
+	"github.com/MalukiMuthusi/pulseid/internal/handlers"
 	"github.com/MalukiMuthusi/pulseid/internal/logger"
 	"github.com/MalukiMuthusi/pulseid/internal/utils"
-	"github.com/gin-gonic/gin"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 )
@@ -22,7 +22,7 @@ func main() {
 	flag.DurationVar(&wait, "graceful-timeout", time.Second*5, "the duration for which the server gracefully wait for existing connections to finish - e.g. 15s or 1m")
 	flag.Parse()
 
-	r := gin.New()
+	r := handlers.SetUpRouter()
 
 	port := viper.GetString(utils.Port)
 
