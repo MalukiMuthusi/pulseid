@@ -60,13 +60,21 @@ paths:
               schema:
                 type: object
 
-  /recall:
-    post:
+  /recall/{token}:
+    get:
       security:
         - basicAuth: []
 
       summary: Disable a token
       description: Disable(recall) a token
+
+      parameters:
+        - in: path
+          name: token
+          schema:
+            type: string
+          required: true
+          description: The token to be recalled
 
       responses:
         "200":

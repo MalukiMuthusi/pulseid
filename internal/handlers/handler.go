@@ -17,6 +17,9 @@ func SetUpRouter() *gin.Engine {
 	validate := Validate{}
 	r.GET("/validate/:token", validate.Handle)
 
+	recall := Recall{}
+	r.GET("/recall/:token", recall.Handle)
+
 	return r
 }
 
