@@ -25,8 +25,10 @@ func SetUpRouter(store store.Store) *gin.Engine {
 	}
 	r.GET("/validate/:token", validate.Handle)
 
-	recall := Recall{}
-	r.GET("/recall/:token", recall.Handle)
+	recall := Recall{Store: store}
+	recallAPI := r.Group("/recall/:token")
+	recallAPI.Use(auth.Middleware())
+	recallAPI.GET("", recall.Handle)
 
 	active := Active{}
 	r.GET("/active", active.Handle)

@@ -77,3 +77,7 @@ func GenerateRandomString() (string, error) {
 
 	return hex.EncodeToString(b)[:12], nil
 }
+
+type RecallTokenResponse struct {
+	Recall bool `json:"recall"`
+}

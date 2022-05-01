@@ -1,13 +1,16 @@
 package handlers_test
 
 import (
+	"encoding/base64"
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
 	"testing"
 
 	"github.com/MalukiMuthusi/pulseid/internal/handlers"
+	"github.com/MalukiMuthusi/pulseid/internal/models"
 	"github.com/MalukiMuthusi/pulseid/internal/store"
 	"github.com/stretchr/testify/assert"
 )
@@ -20,17 +23,17 @@ func TestRecall(t *testing.T) {
 		Name     string
 		EndPoint string
 		Status   int
-		Resp     interface{}
+		Res      models.RecallTokenResponse
 	}
-
-	happyCaseResp := map[string]interface{}{"message": "not implemented"}
 
 	tests := []test{
 		{
 			Name:     "happy case",
 			EndPoint: "/recall/some_unique_token",
-			Status:   http.StatusNotImplemented,
-			Resp:     happyCaseResp,
+			Status:   http.StatusOK,
+			Res: models.RecallTokenResponse{
+				Recall: true,
+			},
 		},
 	}
 
@@ -42,6 +45,12 @@ func TestRecall(t *testing.T) {
 				assert.Fail(t, "failed to create a new request in test")
 			}
 
+			// Add Authorization Header
+
+			credentials := base64.StdEncoding.EncodeToString([]byte("username:password"))
+
+			req.Header.Add("Authorization", fmt.Sprintf("Basic %s", credentials))
+
 			w := httptest.NewRecorder()
 
 			router := handlers.SetUpRouter(store)
@@ -50,7 +59,7 @@ func TestRecall(t *testing.T) {
 
 			assert.Equal(t, test.Status, w.Code)
 
-			var res interface{}
+			var res models.RecallTokenResponse
 
 			b, err := ioutil.ReadAll(w.Body)
 			if err != nil {
@@ -62,7 +71,7 @@ func TestRecall(t *testing.T) {
 				assert.Fail(t, "failed to unMarshal response")
 			}
 
-			assert.EqualValues(t, test.Resp, res)
+			assert.EqualValues(t, test.Res, res)
 		})
 	}
 }
