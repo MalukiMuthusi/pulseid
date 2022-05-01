@@ -706,20 +706,20 @@
             <li class="nav-fixed nav-header active" data-group="_"><a href="#api-_">API Summary</a></li>
 
                   <li class="nav-header" data-group="Default"><a href="#api-Default">API Methods - Default</a></li>
-                    <li data-group="Default" data-name="activeGet" class="">
-                      <a href="#api-Default-activeGet">activeGet</a>
+                    <li data-group="Default" data-name="activeTokens" class="">
+                      <a href="#api-Default-activeTokens">activeTokens</a>
                     </li>
-                    <li data-group="Default" data-name="generateGet" class="">
-                      <a href="#api-Default-generateGet">generateGet</a>
+                    <li data-group="Default" data-name="generate" class="">
+                      <a href="#api-Default-generate">generate</a>
                     </li>
-                    <li data-group="Default" data-name="inactiveGet" class="">
-                      <a href="#api-Default-inactiveGet">inactiveGet</a>
+                    <li data-group="Default" data-name="inactiveTokens" class="">
+                      <a href="#api-Default-inactiveTokens">inactiveTokens</a>
                     </li>
-                    <li data-group="Default" data-name="recallTokenGet" class="">
-                      <a href="#api-Default-recallTokenGet">recallTokenGet</a>
+                    <li data-group="Default" data-name="recallToken" class="">
+                      <a href="#api-Default-recallToken">recallToken</a>
                     </li>
-                    <li data-group="Default" data-name="validateTokenGet" class="">
-                      <a href="#api-Default-validateTokenGet">validateTokenGet</a>
+                    <li data-group="Default" data-name="validateToken" class="">
+                      <a href="#api-Default-validateToken">validateToken</a>
                     </li>
           </ul>
         </nav>
@@ -742,10 +742,10 @@
         <div id="sections">
                 <section id="api-Default">
                   <h1>Default</h1>
-                    <div id="api-Default-activeGet">
-                      <article id="api-Default-activeGet-0" data-group="User" data-name="activeGet" data-version="0">
+                    <div id="api-Default-activeTokens">
+                      <article id="api-Default-activeTokens-0" data-group="User" data-name="activeTokens" data-version="0">
                         <div class="pull-left">
-                          <h1>activeGet</h1>
+                          <h1>activeTokens</h1>
                           <p>List all active tokens</p>
                         </div>
                         <div class="pull-right"></div>
@@ -759,27 +759,27 @@
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Default-activeGet-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Default-activeGet-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Default-activeGet-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Default-activeGet-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Default-activeGet-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Default-activeGet-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Default-activeGet-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Default-activeGet-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Default-activeGet-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Default-activeGet-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Default-activeGet-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Default-activeTokens-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Default-activeTokens-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Default-activeTokens-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Default-activeTokens-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Default-activeTokens-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Default-activeTokens-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Default-activeTokens-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Default-activeTokens-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Default-activeTokens-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Default-activeTokens-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Default-activeTokens-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Default-activeGet-0-curl">
+                          <div class="tab-pane active" id="examples-Default-activeTokens-0-curl">
                            <pre class="prettyprint"><code class="language-bsh">curl -X GET\
  -H "Authorization: Basic [[basicHash]]"\
 -H "Accept: application/json"\
 "http://localhost:8080/active"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Default-activeGet-0-java">
+                          <div class="tab-pane" id="examples-Default-activeTokens-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
@@ -799,17 +799,17 @@ public class DefaultApiExample {
 
         DefaultApi apiInstance = new DefaultApi();
         try {
-            Object result = apiInstance.activeGet();
+            Object result = apiInstance.activeTokens();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#activeGet");
+            System.err.println("Exception when calling DefaultApi#activeTokens");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Default-activeGet-0-android">
+                          <div class="tab-pane" id="examples-Default-activeTokens-0-android">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DefaultApi;
 
 public class DefaultApiExample {
@@ -817,20 +817,20 @@ public class DefaultApiExample {
     public static void main(String[] args) {
         DefaultApi apiInstance = new DefaultApi();
         try {
-            Object result = apiInstance.activeGet();
+            Object result = apiInstance.activeTokens();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#activeGet");
+            System.err.println("Exception when calling DefaultApi#activeTokens");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Default-activeGet-0-groovy">
+  <div class="tab-pane" id="examples-Default-activeTokens-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Default-activeGet-0-objc">
+                            <div class="tab-pane" id="examples-Default-activeTokens-0-objc">
                               <pre class="prettyprint"><code class="language-cpp">Configuration *apiConfig = [Configuration sharedConfig];
 // Configure HTTP basic authorization (authentication scheme: basicAuth)
 [apiConfig setUsername:@"YOUR_USERNAME"];
@@ -839,7 +839,7 @@ public class DefaultApiExample {
 DefaultApi *apiInstance = [[DefaultApi alloc] init];
 
 // List all active tokens
-[apiInstance activeGetWithCompletionHandler: 
+[apiInstance activeTokensWithCompletionHandler: 
               ^(Object output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
@@ -851,7 +851,7 @@ DefaultApi *apiInstance = [[DefaultApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-activeGet-0-javascript">
+                            <div class="tab-pane" id="examples-Default-activeTokens-0-javascript">
                               <pre class="prettyprint"><code class="language-js">var AppInviteService = require('app_invite_service');
 var defaultClient = AppInviteService.ApiClient.instance;
 // Configure HTTP basic authorization: basicAuth
@@ -867,14 +867,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.activeGet(callback);
+api.activeTokens(callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Default-activeGet-0-angular">
+                            <!--<div class="tab-pane" id="examples-Default-activeTokens-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Default-activeGet-0-csharp">
+                            <div class="tab-pane" id="examples-Default-activeTokens-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -883,7 +883,7 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class activeGetExample
+    public class activeTokensExample
     {
         public void main()
         {
@@ -896,12 +896,12 @@ namespace Example
             try
             {
                 // List all active tokens
-                Object result = apiInstance.activeGet();
+                Object result = apiInstance.activeTokens();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling DefaultApi.activeGet: " + e.Message );
+                Debug.Print("Exception when calling DefaultApi.activeTokens: " + e.Message );
             }
         }
     }
@@ -909,7 +909,7 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-activeGet-0-php">
+                            <div class="tab-pane" id="examples-Default-activeTokens-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 // Configure HTTP basic authorization: basicAuth
@@ -919,15 +919,15 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 $api_instance = new Swagger\Client\ApiDefaultApi();
 
 try {
-    $result = $api_instance->activeGet();
+    $result = $api_instance->activeTokens();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->activeGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->activeTokens: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-activeGet-0-perl">
+                            <div class="tab-pane" id="examples-Default-activeTokens-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::DefaultApi;
@@ -938,15 +938,15 @@ $WWW::SwaggerClient::Configuration::password = 'YOUR_PASSWORD';
 my $api_instance = WWW::SwaggerClient::DefaultApi->new();
 
 eval { 
-    my $result = $api_instance->activeGet();
+    my $result = $api_instance->activeTokens();
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling DefaultApi->activeGet: $@\n";
+    warn "Exception when calling DefaultApi->activeTokens: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-activeGet-0-python">
+                            <div class="tab-pane" id="examples-Default-activeTokens-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -961,10 +961,10 @@ api_instance = swagger_client.DefaultApi()
 
 try: 
     # List all active tokens
-    api_response = api_instance.active_get()
+    api_response = api_instance.active_tokens()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DefaultApi->activeGet: %s\n" % e)</code></pre>
+    print("Exception when calling DefaultApi->activeTokens: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -980,14 +980,14 @@ except ApiException as e:
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-activeGet-200-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-activeTokens-200-schema">Schema</a>
                                 </li>
 
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-activeGet-200-schema">
-                                  <div id='responses-activeGet-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-activeTokens-200-schema">
+                                  <div id='responses-activeTokens-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -1014,14 +1014,14 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-activeGet-200-schema-data').val(stringify(schema));
-                                        var result = $('#responses-activeGet-200-schema-200');
+                                        $('#responses-activeTokens-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-activeTokens-200-schema-200');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-activeGet-200-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-activeTokens-200-schema-data' type='hidden' value=''></input>
                                 </div>
                             </div>
 
@@ -1029,14 +1029,14 @@ except ApiException as e:
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-activeGet-404-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-activeTokens-404-schema">Schema</a>
                                 </li>
 
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-activeGet-404-schema">
-                                  <div id='responses-activeGet-404-schema-404' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-activeTokens-404-schema">
+                                  <div id='responses-activeTokens-404-schema-404' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -1063,14 +1063,14 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-activeGet-404-schema-data').val(stringify(schema));
-                                        var result = $('#responses-activeGet-404-schema-404');
+                                        $('#responses-activeTokens-404-schema-data').val(stringify(schema));
+                                        var result = $('#responses-activeTokens-404-schema-404');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-activeGet-404-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-activeTokens-404-schema-data' type='hidden' value=''></input>
                                 </div>
                             </div>
 
@@ -1078,17 +1078,17 @@ except ApiException as e:
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-activeGet-401-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-activeTokens-401-schema">Schema</a>
                                 </li>
 
                                 <li class="">
-                                  <a data-toggle="tab" href="#responses-activeGet-401-headers">Headers</a>
+                                  <a data-toggle="tab" href="#responses-activeTokens-401-headers">Headers</a>
                                 </li>
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-activeGet-401-schema">
-                                  <div id='responses-activeGet-401-schema-401' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-activeTokens-401-schema">
+                                  <div id='responses-activeTokens-401-schema-401' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -1124,16 +1124,16 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-activeGet-401-schema-data').val(stringify(schema));
-                                        var result = $('#responses-activeGet-401-schema-401');
+                                        $('#responses-activeTokens-401-schema-data').val(stringify(schema));
+                                        var result = $('#responses-activeTokens-401-schema-401');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-activeGet-401-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-activeTokens-401-schema-data' type='hidden' value=''></input>
                                 </div>
-                                <div class="tab-pane" id="responses-activeGet-401-headers">
+                                <div class="tab-pane" id="responses-activeTokens-401-headers">
                                     <table>
                                         <tr>
                                             <th width="150px">Name</th>
@@ -1154,10 +1154,10 @@ except ApiException as e:
                         </article>
                       </div>
                       <hr>
-                    <div id="api-Default-generateGet">
-                      <article id="api-Default-generateGet-0" data-group="User" data-name="generateGet" data-version="0">
+                    <div id="api-Default-generate">
+                      <article id="api-Default-generate-0" data-group="User" data-name="generate" data-version="0">
                         <div class="pull-left">
-                          <h1>generateGet</h1>
+                          <h1>generate</h1>
                           <p>Generate token</p>
                         </div>
                         <div class="pull-right"></div>
@@ -1171,27 +1171,27 @@ except ApiException as e:
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Default-generateGet-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Default-generateGet-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Default-generateGet-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Default-generateGet-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Default-generateGet-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Default-generateGet-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Default-generateGet-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Default-generateGet-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Default-generateGet-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Default-generateGet-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Default-generateGet-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Default-generate-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Default-generate-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Default-generate-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Default-generate-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Default-generate-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Default-generate-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Default-generate-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Default-generate-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Default-generate-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Default-generate-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Default-generate-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Default-generateGet-0-curl">
+                          <div class="tab-pane active" id="examples-Default-generate-0-curl">
                            <pre class="prettyprint"><code class="language-bsh">curl -X GET\
  -H "Authorization: Basic [[basicHash]]"\
 -H "Accept: application/json"\
 "http://localhost:8080/generate"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Default-generateGet-0-java">
+                          <div class="tab-pane" id="examples-Default-generate-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
@@ -1211,17 +1211,17 @@ public class DefaultApiExample {
 
         DefaultApi apiInstance = new DefaultApi();
         try {
-            Object result = apiInstance.generateGet();
+            Object result = apiInstance.generate();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#generateGet");
+            System.err.println("Exception when calling DefaultApi#generate");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Default-generateGet-0-android">
+                          <div class="tab-pane" id="examples-Default-generate-0-android">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DefaultApi;
 
 public class DefaultApiExample {
@@ -1229,20 +1229,20 @@ public class DefaultApiExample {
     public static void main(String[] args) {
         DefaultApi apiInstance = new DefaultApi();
         try {
-            Object result = apiInstance.generateGet();
+            Object result = apiInstance.generate();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#generateGet");
+            System.err.println("Exception when calling DefaultApi#generate");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Default-generateGet-0-groovy">
+  <div class="tab-pane" id="examples-Default-generate-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Default-generateGet-0-objc">
+                            <div class="tab-pane" id="examples-Default-generate-0-objc">
                               <pre class="prettyprint"><code class="language-cpp">Configuration *apiConfig = [Configuration sharedConfig];
 // Configure HTTP basic authorization (authentication scheme: basicAuth)
 [apiConfig setUsername:@"YOUR_USERNAME"];
@@ -1251,7 +1251,7 @@ public class DefaultApiExample {
 DefaultApi *apiInstance = [[DefaultApi alloc] init];
 
 // Generate token
-[apiInstance generateGetWithCompletionHandler: 
+[apiInstance generateWithCompletionHandler: 
               ^(Object output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
@@ -1263,7 +1263,7 @@ DefaultApi *apiInstance = [[DefaultApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-generateGet-0-javascript">
+                            <div class="tab-pane" id="examples-Default-generate-0-javascript">
                               <pre class="prettyprint"><code class="language-js">var AppInviteService = require('app_invite_service');
 var defaultClient = AppInviteService.ApiClient.instance;
 // Configure HTTP basic authorization: basicAuth
@@ -1279,14 +1279,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.generateGet(callback);
+api.generate(callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Default-generateGet-0-angular">
+                            <!--<div class="tab-pane" id="examples-Default-generate-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Default-generateGet-0-csharp">
+                            <div class="tab-pane" id="examples-Default-generate-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -1295,7 +1295,7 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class generateGetExample
+    public class generateExample
     {
         public void main()
         {
@@ -1308,12 +1308,12 @@ namespace Example
             try
             {
                 // Generate token
-                Object result = apiInstance.generateGet();
+                Object result = apiInstance.generate();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling DefaultApi.generateGet: " + e.Message );
+                Debug.Print("Exception when calling DefaultApi.generate: " + e.Message );
             }
         }
     }
@@ -1321,7 +1321,7 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-generateGet-0-php">
+                            <div class="tab-pane" id="examples-Default-generate-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 // Configure HTTP basic authorization: basicAuth
@@ -1331,15 +1331,15 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 $api_instance = new Swagger\Client\ApiDefaultApi();
 
 try {
-    $result = $api_instance->generateGet();
+    $result = $api_instance->generate();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->generateGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->generate: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-generateGet-0-perl">
+                            <div class="tab-pane" id="examples-Default-generate-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::DefaultApi;
@@ -1350,15 +1350,15 @@ $WWW::SwaggerClient::Configuration::password = 'YOUR_PASSWORD';
 my $api_instance = WWW::SwaggerClient::DefaultApi->new();
 
 eval { 
-    my $result = $api_instance->generateGet();
+    my $result = $api_instance->generate();
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling DefaultApi->generateGet: $@\n";
+    warn "Exception when calling DefaultApi->generate: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-generateGet-0-python">
+                            <div class="tab-pane" id="examples-Default-generate-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -1373,10 +1373,10 @@ api_instance = swagger_client.DefaultApi()
 
 try: 
     # Generate token
-    api_response = api_instance.generate_get()
+    api_response = api_instance.generate()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DefaultApi->generateGet: %s\n" % e)</code></pre>
+    print("Exception when calling DefaultApi->generate: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -1392,14 +1392,14 @@ except ApiException as e:
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-generateGet-200-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-generate-200-schema">Schema</a>
                                 </li>
 
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-generateGet-200-schema">
-                                  <div id='responses-generateGet-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-generate-200-schema">
+                                  <div id='responses-generate-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -1426,14 +1426,14 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-generateGet-200-schema-data').val(stringify(schema));
-                                        var result = $('#responses-generateGet-200-schema-200');
+                                        $('#responses-generate-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-generate-200-schema-200');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-generateGet-200-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-generate-200-schema-data' type='hidden' value=''></input>
                                 </div>
                             </div>
 
@@ -1441,17 +1441,17 @@ except ApiException as e:
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-generateGet-401-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-generate-401-schema">Schema</a>
                                 </li>
 
                                 <li class="">
-                                  <a data-toggle="tab" href="#responses-generateGet-401-headers">Headers</a>
+                                  <a data-toggle="tab" href="#responses-generate-401-headers">Headers</a>
                                 </li>
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-generateGet-401-schema">
-                                  <div id='responses-generateGet-401-schema-401' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-generate-401-schema">
+                                  <div id='responses-generate-401-schema-401' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -1487,16 +1487,16 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-generateGet-401-schema-data').val(stringify(schema));
-                                        var result = $('#responses-generateGet-401-schema-401');
+                                        $('#responses-generate-401-schema-data').val(stringify(schema));
+                                        var result = $('#responses-generate-401-schema-401');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-generateGet-401-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-generate-401-schema-data' type='hidden' value=''></input>
                                 </div>
-                                <div class="tab-pane" id="responses-generateGet-401-headers">
+                                <div class="tab-pane" id="responses-generate-401-headers">
                                     <table>
                                         <tr>
                                             <th width="150px">Name</th>
@@ -1517,10 +1517,10 @@ except ApiException as e:
                         </article>
                       </div>
                       <hr>
-                    <div id="api-Default-inactiveGet">
-                      <article id="api-Default-inactiveGet-0" data-group="User" data-name="inactiveGet" data-version="0">
+                    <div id="api-Default-inactiveTokens">
+                      <article id="api-Default-inactiveTokens-0" data-group="User" data-name="inactiveTokens" data-version="0">
                         <div class="pull-left">
-                          <h1>inactiveGet</h1>
+                          <h1>inactiveTokens</h1>
                           <p>List all inactive tokens</p>
                         </div>
                         <div class="pull-right"></div>
@@ -1534,27 +1534,27 @@ except ApiException as e:
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Default-inactiveGet-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Default-inactiveGet-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Default-inactiveGet-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Default-inactiveGet-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Default-inactiveGet-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Default-inactiveGet-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Default-inactiveGet-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Default-inactiveGet-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Default-inactiveGet-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Default-inactiveGet-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Default-inactiveGet-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Default-inactiveTokens-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Default-inactiveTokens-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Default-inactiveTokens-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Default-inactiveTokens-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Default-inactiveTokens-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Default-inactiveTokens-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Default-inactiveTokens-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Default-inactiveTokens-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Default-inactiveTokens-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Default-inactiveTokens-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Default-inactiveTokens-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Default-inactiveGet-0-curl">
+                          <div class="tab-pane active" id="examples-Default-inactiveTokens-0-curl">
                            <pre class="prettyprint"><code class="language-bsh">curl -X GET\
  -H "Authorization: Basic [[basicHash]]"\
 -H "Accept: application/json"\
 "http://localhost:8080/inactive"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Default-inactiveGet-0-java">
+                          <div class="tab-pane" id="examples-Default-inactiveTokens-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
@@ -1574,17 +1574,17 @@ public class DefaultApiExample {
 
         DefaultApi apiInstance = new DefaultApi();
         try {
-            Object result = apiInstance.inactiveGet();
+            Object result = apiInstance.inactiveTokens();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#inactiveGet");
+            System.err.println("Exception when calling DefaultApi#inactiveTokens");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Default-inactiveGet-0-android">
+                          <div class="tab-pane" id="examples-Default-inactiveTokens-0-android">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DefaultApi;
 
 public class DefaultApiExample {
@@ -1592,20 +1592,20 @@ public class DefaultApiExample {
     public static void main(String[] args) {
         DefaultApi apiInstance = new DefaultApi();
         try {
-            Object result = apiInstance.inactiveGet();
+            Object result = apiInstance.inactiveTokens();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#inactiveGet");
+            System.err.println("Exception when calling DefaultApi#inactiveTokens");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Default-inactiveGet-0-groovy">
+  <div class="tab-pane" id="examples-Default-inactiveTokens-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Default-inactiveGet-0-objc">
+                            <div class="tab-pane" id="examples-Default-inactiveTokens-0-objc">
                               <pre class="prettyprint"><code class="language-cpp">Configuration *apiConfig = [Configuration sharedConfig];
 // Configure HTTP basic authorization (authentication scheme: basicAuth)
 [apiConfig setUsername:@"YOUR_USERNAME"];
@@ -1614,7 +1614,7 @@ public class DefaultApiExample {
 DefaultApi *apiInstance = [[DefaultApi alloc] init];
 
 // List all inactive tokens
-[apiInstance inactiveGetWithCompletionHandler: 
+[apiInstance inactiveTokensWithCompletionHandler: 
               ^(Object output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
@@ -1626,7 +1626,7 @@ DefaultApi *apiInstance = [[DefaultApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-inactiveGet-0-javascript">
+                            <div class="tab-pane" id="examples-Default-inactiveTokens-0-javascript">
                               <pre class="prettyprint"><code class="language-js">var AppInviteService = require('app_invite_service');
 var defaultClient = AppInviteService.ApiClient.instance;
 // Configure HTTP basic authorization: basicAuth
@@ -1642,14 +1642,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.inactiveGet(callback);
+api.inactiveTokens(callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Default-inactiveGet-0-angular">
+                            <!--<div class="tab-pane" id="examples-Default-inactiveTokens-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Default-inactiveGet-0-csharp">
+                            <div class="tab-pane" id="examples-Default-inactiveTokens-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -1658,7 +1658,7 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class inactiveGetExample
+    public class inactiveTokensExample
     {
         public void main()
         {
@@ -1671,12 +1671,12 @@ namespace Example
             try
             {
                 // List all inactive tokens
-                Object result = apiInstance.inactiveGet();
+                Object result = apiInstance.inactiveTokens();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling DefaultApi.inactiveGet: " + e.Message );
+                Debug.Print("Exception when calling DefaultApi.inactiveTokens: " + e.Message );
             }
         }
     }
@@ -1684,7 +1684,7 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-inactiveGet-0-php">
+                            <div class="tab-pane" id="examples-Default-inactiveTokens-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 // Configure HTTP basic authorization: basicAuth
@@ -1694,15 +1694,15 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 $api_instance = new Swagger\Client\ApiDefaultApi();
 
 try {
-    $result = $api_instance->inactiveGet();
+    $result = $api_instance->inactiveTokens();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->inactiveGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->inactiveTokens: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-inactiveGet-0-perl">
+                            <div class="tab-pane" id="examples-Default-inactiveTokens-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::DefaultApi;
@@ -1713,15 +1713,15 @@ $WWW::SwaggerClient::Configuration::password = 'YOUR_PASSWORD';
 my $api_instance = WWW::SwaggerClient::DefaultApi->new();
 
 eval { 
-    my $result = $api_instance->inactiveGet();
+    my $result = $api_instance->inactiveTokens();
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling DefaultApi->inactiveGet: $@\n";
+    warn "Exception when calling DefaultApi->inactiveTokens: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-inactiveGet-0-python">
+                            <div class="tab-pane" id="examples-Default-inactiveTokens-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -1736,10 +1736,10 @@ api_instance = swagger_client.DefaultApi()
 
 try: 
     # List all inactive tokens
-    api_response = api_instance.inactive_get()
+    api_response = api_instance.inactive_tokens()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DefaultApi->inactiveGet: %s\n" % e)</code></pre>
+    print("Exception when calling DefaultApi->inactiveTokens: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -1755,14 +1755,14 @@ except ApiException as e:
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-inactiveGet-200-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-inactiveTokens-200-schema">Schema</a>
                                 </li>
 
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-inactiveGet-200-schema">
-                                  <div id='responses-inactiveGet-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-inactiveTokens-200-schema">
+                                  <div id='responses-inactiveTokens-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -1789,14 +1789,14 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-inactiveGet-200-schema-data').val(stringify(schema));
-                                        var result = $('#responses-inactiveGet-200-schema-200');
+                                        $('#responses-inactiveTokens-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-inactiveTokens-200-schema-200');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-inactiveGet-200-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-inactiveTokens-200-schema-data' type='hidden' value=''></input>
                                 </div>
                             </div>
 
@@ -1804,14 +1804,14 @@ except ApiException as e:
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-inactiveGet-404-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-inactiveTokens-404-schema">Schema</a>
                                 </li>
 
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-inactiveGet-404-schema">
-                                  <div id='responses-inactiveGet-404-schema-404' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-inactiveTokens-404-schema">
+                                  <div id='responses-inactiveTokens-404-schema-404' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -1838,14 +1838,14 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-inactiveGet-404-schema-data').val(stringify(schema));
-                                        var result = $('#responses-inactiveGet-404-schema-404');
+                                        $('#responses-inactiveTokens-404-schema-data').val(stringify(schema));
+                                        var result = $('#responses-inactiveTokens-404-schema-404');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-inactiveGet-404-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-inactiveTokens-404-schema-data' type='hidden' value=''></input>
                                 </div>
                             </div>
 
@@ -1853,17 +1853,17 @@ except ApiException as e:
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-inactiveGet-401-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-inactiveTokens-401-schema">Schema</a>
                                 </li>
 
                                 <li class="">
-                                  <a data-toggle="tab" href="#responses-inactiveGet-401-headers">Headers</a>
+                                  <a data-toggle="tab" href="#responses-inactiveTokens-401-headers">Headers</a>
                                 </li>
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-inactiveGet-401-schema">
-                                  <div id='responses-inactiveGet-401-schema-401' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-inactiveTokens-401-schema">
+                                  <div id='responses-inactiveTokens-401-schema-401' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -1899,16 +1899,16 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-inactiveGet-401-schema-data').val(stringify(schema));
-                                        var result = $('#responses-inactiveGet-401-schema-401');
+                                        $('#responses-inactiveTokens-401-schema-data').val(stringify(schema));
+                                        var result = $('#responses-inactiveTokens-401-schema-401');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-inactiveGet-401-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-inactiveTokens-401-schema-data' type='hidden' value=''></input>
                                 </div>
-                                <div class="tab-pane" id="responses-inactiveGet-401-headers">
+                                <div class="tab-pane" id="responses-inactiveTokens-401-headers">
                                     <table>
                                         <tr>
                                             <th width="150px">Name</th>
@@ -1929,10 +1929,10 @@ except ApiException as e:
                         </article>
                       </div>
                       <hr>
-                    <div id="api-Default-recallTokenGet">
-                      <article id="api-Default-recallTokenGet-0" data-group="User" data-name="recallTokenGet" data-version="0">
+                    <div id="api-Default-recallToken">
+                      <article id="api-Default-recallToken-0" data-group="User" data-name="recallToken" data-version="0">
                         <div class="pull-left">
-                          <h1>recallTokenGet</h1>
+                          <h1>recallToken</h1>
                           <p>Disable a token</p>
                         </div>
                         <div class="pull-right"></div>
@@ -1946,27 +1946,27 @@ except ApiException as e:
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Default-recallTokenGet-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Default-recallTokenGet-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Default-recallTokenGet-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Default-recallTokenGet-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Default-recallTokenGet-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Default-recallTokenGet-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Default-recallTokenGet-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Default-recallTokenGet-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Default-recallTokenGet-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Default-recallTokenGet-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Default-recallTokenGet-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Default-recallToken-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Default-recallToken-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Default-recallToken-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Default-recallToken-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Default-recallToken-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Default-recallToken-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Default-recallToken-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Default-recallToken-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Default-recallToken-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Default-recallToken-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Default-recallToken-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Default-recallTokenGet-0-curl">
+                          <div class="tab-pane active" id="examples-Default-recallToken-0-curl">
                            <pre class="prettyprint"><code class="language-bsh">curl -X GET\
  -H "Authorization: Basic [[basicHash]]"\
 -H "Accept: application/json"\
 "http://localhost:8080/recall/{token}"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Default-recallTokenGet-0-java">
+                          <div class="tab-pane" id="examples-Default-recallToken-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
@@ -1987,17 +1987,17 @@ public class DefaultApiExample {
         DefaultApi apiInstance = new DefaultApi();
         String token = token_example; // String | The token to be recalled
         try {
-            Object result = apiInstance.recallTokenGet(token);
+            Object result = apiInstance.recallToken(token);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#recallTokenGet");
+            System.err.println("Exception when calling DefaultApi#recallToken");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Default-recallTokenGet-0-android">
+                          <div class="tab-pane" id="examples-Default-recallToken-0-android">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DefaultApi;
 
 public class DefaultApiExample {
@@ -2006,20 +2006,20 @@ public class DefaultApiExample {
         DefaultApi apiInstance = new DefaultApi();
         String token = token_example; // String | The token to be recalled
         try {
-            Object result = apiInstance.recallTokenGet(token);
+            Object result = apiInstance.recallToken(token);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#recallTokenGet");
+            System.err.println("Exception when calling DefaultApi#recallToken");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Default-recallTokenGet-0-groovy">
+  <div class="tab-pane" id="examples-Default-recallToken-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Default-recallTokenGet-0-objc">
+                            <div class="tab-pane" id="examples-Default-recallToken-0-objc">
                               <pre class="prettyprint"><code class="language-cpp">Configuration *apiConfig = [Configuration sharedConfig];
 // Configure HTTP basic authorization (authentication scheme: basicAuth)
 [apiConfig setUsername:@"YOUR_USERNAME"];
@@ -2029,7 +2029,7 @@ String *token = token_example; // The token to be recalled
 DefaultApi *apiInstance = [[DefaultApi alloc] init];
 
 // Disable a token
-[apiInstance recallTokenGetWith:token
+[apiInstance recallTokenWith:token
               completionHandler: ^(Object output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
@@ -2041,7 +2041,7 @@ DefaultApi *apiInstance = [[DefaultApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-recallTokenGet-0-javascript">
+                            <div class="tab-pane" id="examples-Default-recallToken-0-javascript">
                               <pre class="prettyprint"><code class="language-js">var AppInviteService = require('app_invite_service');
 var defaultClient = AppInviteService.ApiClient.instance;
 // Configure HTTP basic authorization: basicAuth
@@ -2059,14 +2059,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.recallTokenGet(token, callback);
+api.recallToken(token, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Default-recallTokenGet-0-angular">
+                            <!--<div class="tab-pane" id="examples-Default-recallToken-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Default-recallTokenGet-0-csharp">
+                            <div class="tab-pane" id="examples-Default-recallToken-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -2075,7 +2075,7 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class recallTokenGetExample
+    public class recallTokenExample
     {
         public void main()
         {
@@ -2089,12 +2089,12 @@ namespace Example
             try
             {
                 // Disable a token
-                Object result = apiInstance.recallTokenGet(token);
+                Object result = apiInstance.recallToken(token);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling DefaultApi.recallTokenGet: " + e.Message );
+                Debug.Print("Exception when calling DefaultApi.recallToken: " + e.Message );
             }
         }
     }
@@ -2102,7 +2102,7 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-recallTokenGet-0-php">
+                            <div class="tab-pane" id="examples-Default-recallToken-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 // Configure HTTP basic authorization: basicAuth
@@ -2113,15 +2113,15 @@ $api_instance = new Swagger\Client\ApiDefaultApi();
 $token = token_example; // String | The token to be recalled
 
 try {
-    $result = $api_instance->recallTokenGet($token);
+    $result = $api_instance->recallToken($token);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->recallTokenGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->recallToken: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-recallTokenGet-0-perl">
+                            <div class="tab-pane" id="examples-Default-recallToken-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::DefaultApi;
@@ -2133,15 +2133,15 @@ my $api_instance = WWW::SwaggerClient::DefaultApi->new();
 my $token = token_example; # String | The token to be recalled
 
 eval { 
-    my $result = $api_instance->recallTokenGet(token => $token);
+    my $result = $api_instance->recallToken(token => $token);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling DefaultApi->recallTokenGet: $@\n";
+    warn "Exception when calling DefaultApi->recallToken: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-recallTokenGet-0-python">
+                            <div class="tab-pane" id="examples-Default-recallToken-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -2157,10 +2157,10 @@ token = token_example # String | The token to be recalled
 
 try: 
     # Disable a token
-    api_response = api_instance.recall_token_get(token)
+    api_response = api_instance.recall_token(token)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DefaultApi->recallTokenGet: %s\n" % e)</code></pre>
+    print("Exception when calling DefaultApi->recallToken: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -2176,7 +2176,7 @@ except ApiException as e:
                                   <td>
                                   
                                   
-                                      <div id="d2e199_recallTokenGet_token">
+                                      <div id="d2e199_recallToken_token">
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
@@ -2205,14 +2205,14 @@ except ApiException as e:
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-recallTokenGet-200-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-recallToken-200-schema">Schema</a>
                                 </li>
 
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-recallTokenGet-200-schema">
-                                  <div id='responses-recallTokenGet-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-recallToken-200-schema">
+                                  <div id='responses-recallToken-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -2239,14 +2239,14 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-recallTokenGet-200-schema-data').val(stringify(schema));
-                                        var result = $('#responses-recallTokenGet-200-schema-200');
+                                        $('#responses-recallToken-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-recallToken-200-schema-200');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-recallTokenGet-200-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-recallToken-200-schema-data' type='hidden' value=''></input>
                                 </div>
                             </div>
 
@@ -2254,14 +2254,14 @@ except ApiException as e:
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-recallTokenGet-404-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-recallToken-404-schema">Schema</a>
                                 </li>
 
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-recallTokenGet-404-schema">
-                                  <div id='responses-recallTokenGet-404-schema-404' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-recallToken-404-schema">
+                                  <div id='responses-recallToken-404-schema-404' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -2288,14 +2288,14 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-recallTokenGet-404-schema-data').val(stringify(schema));
-                                        var result = $('#responses-recallTokenGet-404-schema-404');
+                                        $('#responses-recallToken-404-schema-data').val(stringify(schema));
+                                        var result = $('#responses-recallToken-404-schema-404');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-recallTokenGet-404-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-recallToken-404-schema-data' type='hidden' value=''></input>
                                 </div>
                             </div>
 
@@ -2303,17 +2303,17 @@ except ApiException as e:
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-recallTokenGet-401-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-recallToken-401-schema">Schema</a>
                                 </li>
 
                                 <li class="">
-                                  <a data-toggle="tab" href="#responses-recallTokenGet-401-headers">Headers</a>
+                                  <a data-toggle="tab" href="#responses-recallToken-401-headers">Headers</a>
                                 </li>
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-recallTokenGet-401-schema">
-                                  <div id='responses-recallTokenGet-401-schema-401' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-recallToken-401-schema">
+                                  <div id='responses-recallToken-401-schema-401' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -2349,16 +2349,16 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-recallTokenGet-401-schema-data').val(stringify(schema));
-                                        var result = $('#responses-recallTokenGet-401-schema-401');
+                                        $('#responses-recallToken-401-schema-data').val(stringify(schema));
+                                        var result = $('#responses-recallToken-401-schema-401');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-recallTokenGet-401-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-recallToken-401-schema-data' type='hidden' value=''></input>
                                 </div>
-                                <div class="tab-pane" id="responses-recallTokenGet-401-headers">
+                                <div class="tab-pane" id="responses-recallToken-401-headers">
                                     <table>
                                         <tr>
                                             <th width="150px">Name</th>
@@ -2379,10 +2379,10 @@ except ApiException as e:
                         </article>
                       </div>
                       <hr>
-                    <div id="api-Default-validateTokenGet">
-                      <article id="api-Default-validateTokenGet-0" data-group="User" data-name="validateTokenGet" data-version="0">
+                    <div id="api-Default-validateToken">
+                      <article id="api-Default-validateToken-0" data-group="User" data-name="validateToken" data-version="0">
                         <div class="pull-left">
-                          <h1>validateTokenGet</h1>
+                          <h1>validateToken</h1>
                           <p>Validate token</p>
                         </div>
                         <div class="pull-right"></div>
@@ -2396,26 +2396,26 @@ except ApiException as e:
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Default-validateTokenGet-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Default-validateTokenGet-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Default-validateTokenGet-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Default-validateTokenGet-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Default-validateTokenGet-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Default-validateTokenGet-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Default-validateTokenGet-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Default-validateTokenGet-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Default-validateTokenGet-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Default-validateTokenGet-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Default-validateTokenGet-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Default-validateToken-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Default-validateToken-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Default-validateToken-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Default-validateToken-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Default-validateToken-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Default-validateToken-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Default-validateToken-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Default-validateToken-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Default-validateToken-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Default-validateToken-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Default-validateToken-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Default-validateTokenGet-0-curl">
+                          <div class="tab-pane active" id="examples-Default-validateToken-0-curl">
                            <pre class="prettyprint"><code class="language-bsh">curl -X GET\
 -H "Accept: application/json"\
 "http://localhost:8080/validate/{token}"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Default-validateTokenGet-0-java">
+                          <div class="tab-pane" id="examples-Default-validateToken-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
@@ -2431,17 +2431,17 @@ public class DefaultApiExample {
         DefaultApi apiInstance = new DefaultApi();
         String token = token_example; // String | The token to be validated
         try {
-            Object result = apiInstance.validateTokenGet(token);
+            Object result = apiInstance.validateToken(token);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#validateTokenGet");
+            System.err.println("Exception when calling DefaultApi#validateToken");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Default-validateTokenGet-0-android">
+                          <div class="tab-pane" id="examples-Default-validateToken-0-android">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DefaultApi;
 
 public class DefaultApiExample {
@@ -2450,26 +2450,26 @@ public class DefaultApiExample {
         DefaultApi apiInstance = new DefaultApi();
         String token = token_example; // String | The token to be validated
         try {
-            Object result = apiInstance.validateTokenGet(token);
+            Object result = apiInstance.validateToken(token);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#validateTokenGet");
+            System.err.println("Exception when calling DefaultApi#validateToken");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Default-validateTokenGet-0-groovy">
+  <div class="tab-pane" id="examples-Default-validateToken-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Default-validateTokenGet-0-objc">
+                            <div class="tab-pane" id="examples-Default-validateToken-0-objc">
                               <pre class="prettyprint"><code class="language-cpp">String *token = token_example; // The token to be validated
 
 DefaultApi *apiInstance = [[DefaultApi alloc] init];
 
 // Validate token
-[apiInstance validateTokenGetWith:token
+[apiInstance validateTokenWith:token
               completionHandler: ^(Object output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
@@ -2481,7 +2481,7 @@ DefaultApi *apiInstance = [[DefaultApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-validateTokenGet-0-javascript">
+                            <div class="tab-pane" id="examples-Default-validateToken-0-javascript">
                               <pre class="prettyprint"><code class="language-js">var AppInviteService = require('app_invite_service');
 
 var api = new AppInviteService.DefaultApi()
@@ -2494,14 +2494,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.validateTokenGet(token, callback);
+api.validateToken(token, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Default-validateTokenGet-0-angular">
+                            <!--<div class="tab-pane" id="examples-Default-validateToken-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Default-validateTokenGet-0-csharp">
+                            <div class="tab-pane" id="examples-Default-validateToken-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -2510,7 +2510,7 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class validateTokenGetExample
+    public class validateTokenExample
     {
         public void main()
         {
@@ -2521,12 +2521,12 @@ namespace Example
             try
             {
                 // Validate token
-                Object result = apiInstance.validateTokenGet(token);
+                Object result = apiInstance.validateToken(token);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling DefaultApi.validateTokenGet: " + e.Message );
+                Debug.Print("Exception when calling DefaultApi.validateToken: " + e.Message );
             }
         }
     }
@@ -2534,7 +2534,7 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-validateTokenGet-0-php">
+                            <div class="tab-pane" id="examples-Default-validateToken-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
@@ -2542,15 +2542,15 @@ $api_instance = new Swagger\Client\ApiDefaultApi();
 $token = token_example; // String | The token to be validated
 
 try {
-    $result = $api_instance->validateTokenGet($token);
+    $result = $api_instance->validateToken($token);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->validateTokenGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->validateToken: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-validateTokenGet-0-perl">
+                            <div class="tab-pane" id="examples-Default-validateToken-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::DefaultApi;
@@ -2559,15 +2559,15 @@ my $api_instance = WWW::SwaggerClient::DefaultApi->new();
 my $token = token_example; # String | The token to be validated
 
 eval { 
-    my $result = $api_instance->validateTokenGet(token => $token);
+    my $result = $api_instance->validateToken(token => $token);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling DefaultApi->validateTokenGet: $@\n";
+    warn "Exception when calling DefaultApi->validateToken: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-validateTokenGet-0-python">
+                            <div class="tab-pane" id="examples-Default-validateToken-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -2580,10 +2580,10 @@ token = token_example # String | The token to be validated
 
 try: 
     # Validate token
-    api_response = api_instance.validate_token_get(token)
+    api_response = api_instance.validate_token(token)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DefaultApi->validateTokenGet: %s\n" % e)</code></pre>
+    print("Exception when calling DefaultApi->validateToken: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -2599,7 +2599,7 @@ except ApiException as e:
                                   <td>
                                   
                                   
-                                      <div id="d2e199_validateTokenGet_token">
+                                      <div id="d2e199_validateToken_token">
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
@@ -2628,14 +2628,14 @@ except ApiException as e:
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-validateTokenGet-200-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-validateToken-200-schema">Schema</a>
                                 </li>
 
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-validateTokenGet-200-schema">
-                                  <div id='responses-validateTokenGet-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-validateToken-200-schema">
+                                  <div id='responses-validateToken-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -2662,14 +2662,14 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-validateTokenGet-200-schema-data').val(stringify(schema));
-                                        var result = $('#responses-validateTokenGet-200-schema-200');
+                                        $('#responses-validateToken-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-validateToken-200-schema-200');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-validateTokenGet-200-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-validateToken-200-schema-data' type='hidden' value=''></input>
                                 </div>
                             </div>
 
