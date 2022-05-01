@@ -1,5 +1,10 @@
 # App Invite Service
 
+## Deployed Solution
+
+The API is deployed at [https://pulseid-fur355ca3q-uc.a.run.app](https://pulseid-fur355ca3q-uc.a.run.app)  
+The API documentation is deployed at [https://pulseid.web.app](https://pulseid.web.app)
+
 ## Requirements
 
 Create a service that will facilitate the invite token generation and validation for the Catalyst Experience App.
@@ -44,7 +49,7 @@ The user workflow is as follow
 4. Use an actual DB (MySQL is preferred)
 5. Provide deployment instructions
 
-## Implementation
+## Implementation Server
 
 ### Authentication
 
@@ -73,3 +78,34 @@ Authorization: Basic bWFsdWtpbXV0aHVzaTpwYXNzMTIzCg==
 # Send request
 curl -H "Authorization: Basic bWFsdWtpbXV0aHVzaTpwYXNzMTIzCg==" http://localhost:8080/generate
 ```
+
+## API Documentation
+
+To generate the documentation for the swagger specification
+
+```sh
+# generate an html documentation of your api
+java \
+    -jar $HOME/programs/swagger-codegen-cli.jar generate \
+    -i swagger.yml \
+    -l html2 \
+    -o docs
+```
+
+### Host the documentation
+
+The folder api-docs can be deployed. as a documentation for the API.  
+In this example I will host the documentation on firebase, follow the documentation at [firebase-hosting][1]
+
+```sh
+# deploy
+firebase deploy --only hosting:pulseid
+```
+
+The api documentation is deployed at [https://pulseid.web.app](https://pulseid.web.app)
+
+## References
+
+[https://firebase.google.com/docs/hosting](https://firebase.google.com/docs/hosting)
+
+[1]: https://firebase.google.com/docs/hosting

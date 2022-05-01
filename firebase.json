@@ -1,0 +1,7 @@
+{
+  "hosting": {
+    "public": "docs",
+    "site": "pulseid",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+  }
+}
