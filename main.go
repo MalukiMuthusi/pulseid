@@ -69,3 +69,45 @@ func main() {
 
 	os.Exit(0)
 }
+
+func init() {
+	viper.AutomaticEnv()
+
+	viper.SetEnvPrefix(utils.AppName)
+
+	BindEnvs()
+
+	viper.SetDefault(utils.Port, "8080")
+	viper.SetDefault(utils.DbHost, "127.0.0.1")
+	viper.SetDefault(utils.DbHostedOnCloud, false)
+
+	CheckMustBeSetEnvs()
+}
+
+func BindEnvs() {
+	viper.BindEnv(utils.Port, "PORT")
+	viper.BindEnv(utils.DbUser)
+	viper.BindEnv(utils.DbPwd)
+	viper.BindEnv(utils.DbPort)
+	viper.BindEnv(utils.DbName)
+	viper.BindEnv(utils.DbHost)
+	viper.BindEnv(utils.DbHostedOnCloud)
+	viper.BindEnv(utils.DbConnectionName)
+	viper.BindEnv(utils.DbTimeZone)
+}
+
+func EnvMustBeSet(key string) {
+	if !viper.IsSet(key) {
+		logger.Log.WithField(key, false).Fatal("not set")
+	}
+}
+
+func CheckMustBeSetEnvs() {
+	EnvMustBeSet(utils.DbUser)
+	EnvMustBeSet(utils.DbPwd)
+	EnvMustBeSet(utils.DbPort)
+	EnvMustBeSet(utils.DbName)
+	EnvMustBeSet(utils.DbHostedOnCloud)
+	EnvMustBeSet(utils.DbConnectionName)
+	EnvMustBeSet(utils.DbTimeZone)
+}

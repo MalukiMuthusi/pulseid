@@ -43,3 +43,33 @@ The user workflow is as follow
 3. Tests, all levels of them
 4. Use an actual DB (MySQL is preferred)
 5. Provide deployment instructions
+
+## Implementation
+
+### Authentication
+
+The service uses the basic Authorization scheme.
+
+username: myusername  
+password: pass@123
+
+Use base64 tool to encode the username and password joined by a colon
+
+```sh
+# base64 encode the username and password
+echo "myusername:pass@123" | base64 -
+bWFsdWtpbXV0aHVzaTpwYXNzMTIzCg==
+```
+
+For the endpoints that require authentication, use the generated string. Send the header
+
+```txt
+Authorization: Basic bWFsdWtpbXV0aHVzaTpwYXNzMTIzCg==
+```
+
+### /generate
+
+```sh
+# Send request
+curl -H "Authorization: Basic bWFsdWtpbXV0aHVzaTpwYXNzMTIzCg==" http://localhost:8080/generate
+```

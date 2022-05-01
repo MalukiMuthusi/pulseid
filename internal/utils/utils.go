@@ -1,7 +1,7 @@
 package utils
 
 const (
-	AppName = "wallet"
+	AppName = "pulse"
 	Port    = "port"
 )
 
