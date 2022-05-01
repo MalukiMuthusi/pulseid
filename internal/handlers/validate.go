@@ -4,10 +4,13 @@ import (
 	"net/http"
 
 	"github.com/MalukiMuthusi/pulseid/internal/models"
+	"github.com/MalukiMuthusi/pulseid/internal/store"
 	"github.com/gin-gonic/gin"
 )
 
-type Validate struct{}
+type Validate struct {
+	Store store.Store
+}
 
 func (h Validate) Handle(c *gin.Context) {
 
@@ -22,7 +25,15 @@ func (h Validate) Handle(c *gin.Context) {
 		return
 	}
 
-	res := map[string]interface{}{"message": "not implemented"}
+	_, err := h.Store.GetToken(c.Request.Context(), tokenParameter.Token)
+	if err != nil {
+		basicError := models.BasicError{
+			Code:    "TOKEN_NOT_FOUND",
+			Message: "token not found",
+		}
 
-	c.JSON(http.StatusNotImplemented, res)
+		c.JSON(http.StatusInternalServerError, basicError)
+		return
+	}
+
 }

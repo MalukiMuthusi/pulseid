@@ -2,9 +2,11 @@ package models
 
 import (
 	"encoding/hex"
+	"fmt"
 	"math/rand"
 	"time"
 
+	"github.com/MalukiMuthusi/pulseid/internal/logger"
 	"gorm.io/gorm"
 )
 
@@ -19,7 +21,10 @@ type BasicError struct {
 
 type Token struct {
 	gorm.Model
+
 	Token string `json:"token"`
+
+	Recalled bool `json:"recalled"`
 }
 
 func NewToken() (*Token, error) {
@@ -29,6 +34,28 @@ func NewToken() (*Token, error) {
 	}
 
 	return &Token{Token: tokenCode}, nil
+}
+
+func (t *Token) CheckValidity() bool {
+
+	if t.Recalled {
+		return false
+	}
+
+	createdAt := t.CreatedAt
+
+	now := time.Now()
+
+	duration, err := time.ParseDuration(fmt.Sprintf("%ds", 24*7*60*60))
+	if err != nil {
+		logger.Log.Error(err)
+	}
+
+	expiryDate := createdAt.Add(duration)
+	logger.Log.Info(expiryDate.String())
+
+	return now.Before(expiryDate)
+
 }
 
 type AuthHeader struct {

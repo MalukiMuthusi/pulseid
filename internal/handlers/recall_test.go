@@ -8,15 +8,13 @@ import (
 	"testing"
 
 	"github.com/MalukiMuthusi/pulseid/internal/handlers"
-	"github.com/MalukiMuthusi/pulseid/internal/store/mysql"
+	"github.com/MalukiMuthusi/pulseid/internal/store"
 	"github.com/stretchr/testify/assert"
 )
 
 func TestRecall(t *testing.T) {
 
-	mysql, err := mysql.New()
-	assert.Nil(t, err, "err not expected")
-	assert.NotNil(t, mysql, "expected a valid data structure")
+	store := store.NewMockStore()
 
 	type test struct {
 		Name     string
@@ -46,7 +44,7 @@ func TestRecall(t *testing.T) {
 
 			w := httptest.NewRecorder()
 
-			router := handlers.SetUpRouter(mysql)
+			router := handlers.SetUpRouter(store)
 
 			router.ServeHTTP(w, req)
 
