@@ -1,13 +1,16 @@
 package handlers_test
 
 import (
+	"encoding/base64"
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
 	"testing"
 
 	"github.com/MalukiMuthusi/pulseid/internal/handlers"
+	"github.com/MalukiMuthusi/pulseid/internal/models"
 	"github.com/MalukiMuthusi/pulseid/internal/store"
 	"github.com/stretchr/testify/assert"
 )
@@ -20,22 +23,18 @@ func TestActive(t *testing.T) {
 		Name     string
 		EndPoint string
 		Status   int
-		Resp     interface{}
 	}
-
-	happyCaseResp := map[string]interface{}{"message": "not implemented"}
 
 	tests := []test{
 		{
 			Name:     "happy case",
 			EndPoint: "/active",
-			Status:   http.StatusNotImplemented,
-			Resp:     happyCaseResp,
+			Status:   http.StatusOK,
 		},
 	}
 
 	for _, test := range tests {
-		t.Run(test.Name, func(t *testing.T) {
+		t.Run(test.Name, func(tt *testing.T) {
 
 			req, err := http.NewRequest(http.MethodGet, test.EndPoint, nil)
 			if err != nil {
@@ -44,13 +43,19 @@ func TestActive(t *testing.T) {
 
 			w := httptest.NewRecorder()
 
+			// Add Authorization Header
+
+			credentials := base64.StdEncoding.EncodeToString([]byte("username:password"))
+
+			req.Header.Add("Authorization", fmt.Sprintf("Basic %s", credentials))
+
 			router := handlers.SetUpRouter(store)
 
 			router.ServeHTTP(w, req)
 
-			assert.Equal(t, test.Status, w.Code)
+			assert.Equal(tt, test.Status, w.Code)
 
-			var res interface{}
+			var res []*models.Token
 
 			b, err := ioutil.ReadAll(w.Body)
 			if err != nil {
@@ -62,7 +67,12 @@ func TestActive(t *testing.T) {
 				assert.Fail(t, "failed to unMarshal response")
 			}
 
-			assert.EqualValues(t, test.Resp, res)
+			assert.Equal(tt, true, len(res) > 0)
+
+			for _, v := range res {
+				assert.Equal(tt, v.CheckValidity(), true)
+			}
+
 		})
 	}
 }

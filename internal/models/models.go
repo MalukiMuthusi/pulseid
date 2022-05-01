@@ -29,15 +29,26 @@ type Token struct {
 	Token string `json:"token"`
 
 	Recalled bool `json:"recalled"`
+
+	Expiry time.Time `json:"expiry"`
 }
 
 func NewToken() (*Token, error) {
 	tokenCode, err := GenerateRandomString()
 	if err != nil {
+		logger.Log.Info(err)
 		return nil, err
 	}
 
-	return &Token{Token: tokenCode}, nil
+	duration, err := time.ParseDuration(fmt.Sprintf("%ds", 24*7*60*60))
+	if err != nil {
+		logger.Log.Info(err)
+		return nil, err
+	}
+
+	expiry := time.Now().Add(duration)
+
+	return &Token{Token: tokenCode, Expiry: expiry}, nil
 }
 
 func (t *Token) CheckValidity() bool {
@@ -46,19 +57,9 @@ func (t *Token) CheckValidity() bool {
 		return false
 	}
 
-	createdAt := t.CreatedAt
-
 	now := time.Now()
 
-	duration, err := time.ParseDuration(fmt.Sprintf("%ds", 24*7*60*60))
-	if err != nil {
-		logger.Log.Error(err)
-	}
-
-	expiryDate := createdAt.Add(duration)
-	logger.Log.Info(expiryDate.String())
-
-	return now.Before(expiryDate)
+	return now.Before(t.Expiry)
 
 }
 

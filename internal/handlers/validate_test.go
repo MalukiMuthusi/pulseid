@@ -12,7 +12,6 @@ import (
 	"github.com/MalukiMuthusi/pulseid/internal/models"
 	"github.com/MalukiMuthusi/pulseid/internal/store"
 	"github.com/stretchr/testify/assert"
-	"gorm.io/gorm"
 )
 
 func TestValidate(t *testing.T) {
@@ -74,28 +73,21 @@ func TestValidate(t *testing.T) {
 
 func TestCheckValidity(t *testing.T) {
 
-	validToken := models.Token{
-		Model: gorm.Model{
-			CreatedAt: time.Now(),
-		},
-	}
+	validToken, err := models.NewToken()
+	assert.Nil(t, err, "failed to generate a token")
 
-	expiredToken := models.Token{
-		Model: gorm.Model{
-			CreatedAt: time.Now().AddDate(-1, 1, 8),
-		},
-	}
+	expiredToken, err := models.NewToken()
+	expiredToken.Expiry = time.Now().AddDate(0, 0, -8)
+	assert.Nil(t, err, "failed to generate a token")
 
-	recalledToken := models.Token{
-		Model: gorm.Model{
-			CreatedAt: time.Now().AddDate(1, 1, 8),
-		},
-		Recalled: true,
-	}
+	recalledToken, err := models.NewToken()
+	assert.Nil(t, err, "failed to generate a token")
+
+	recalledToken.Recalled = true
 
 	type test struct {
 		name     string
-		token    models.Token
+		token    *models.Token
 		validity bool
 	}
 

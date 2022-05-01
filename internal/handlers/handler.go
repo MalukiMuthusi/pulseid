@@ -30,7 +30,7 @@ func SetUpRouter(store store.Store) *gin.Engine {
 	recallAPI.Use(auth.Middleware())
 	recallAPI.GET("", recall.Handle)
 
-	active := Active{}
+	active := Active{Store: store}
 	r.GET("/active", active.Handle)
 
 	inactive := Inactive{}

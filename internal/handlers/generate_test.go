@@ -28,6 +28,8 @@ func TestGenerate(t *testing.T) {
 		assert.Fail(t, "failed to create a new request in test")
 	}
 
+	// Add Authorization Header
+
 	credentials := base64.StdEncoding.EncodeToString([]byte("username:password"))
 
 	req.Header.Add("Authorization", fmt.Sprintf("Basic %s", credentials))
