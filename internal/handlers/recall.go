@@ -36,7 +36,7 @@ func (h Recall) Handle(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, models.RecallTokenResponse{
-		Recall: token.Recalled,
+		Success: token.Recalled,
 	})
 
 }

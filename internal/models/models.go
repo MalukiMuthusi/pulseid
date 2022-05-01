@@ -80,5 +80,5 @@ func GenerateRandomString() (string, error) {
 }
 
 type RecallTokenResponse struct {
-	Recall bool `json:"recall"`
+	Success bool `json:"success"`
 }

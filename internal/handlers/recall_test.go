@@ -32,7 +32,7 @@ func TestRecall(t *testing.T) {
 			EndPoint: "/recall/some_unique_token",
 			Status:   http.StatusOK,
 			Res: models.RecallTokenResponse{
-				Recall: true,
+				Success: true,
 			},
 		},
 	}
