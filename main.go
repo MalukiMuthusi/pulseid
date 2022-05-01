@@ -25,10 +25,10 @@ func main() {
 
 	store, err := mysql.New()
 	if err != nil {
-		logger.Log.Fatalf("failed to initialize database ", err)
+		logger.Log.Fatal("failed to initialize database ", err)
 	}
 
-	r := handlers.SetUpRouter(store)
+	r := handlers.SetUpRouter(store, handlers.DebugPrintRoute)
 
 	port := viper.GetString(utils.Port)
 

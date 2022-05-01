@@ -7,11 +7,11 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-func SetUpRouter(store store.Store) *gin.Engine {
+func SetUpRouter(store store.Store, debugPrintRoute DebugPrintRouteFunc) *gin.Engine {
 
 	r := gin.New()
 
-	gin.DebugPrintRouteFunc = DebugPrintRoute
+	gin.DebugPrintRouteFunc = debugPrintRoute
 
 	auth := Auth{}
 
@@ -33,11 +33,15 @@ func SetUpRouter(store store.Store) *gin.Engine {
 	active := Active{Store: store}
 	r.GET("/active", active.Handle)
 
-	inactive := Inactive{}
-	r.GET("/inactive", inactive.Handle)
+	inactive := Inactive{Store: store}
+	inactiveAPI := r.Group("/inactive")
+	inactiveAPI.Use(auth.Middleware())
+	inactiveAPI.GET("", inactive.Handle)
 
 	return r
 }
+
+type DebugPrintRouteFunc func(httpMethod, absolutePath, handlerName string, nuHandlers int)
 
 func DebugPrintRoute(httpMethod, absolutePath, handlerName string, nuHandlers int) {
 	logger.Log.WithFields(logrus.Fields{"httpMethod": httpMethod, "path": absolutePath, "handlerName": handlerName, "nuHandlers": nuHandlers}).Info("endpointRequest")

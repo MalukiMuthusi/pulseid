@@ -30,8 +30,6 @@ func (m Auth) Middleware() gin.HandlerFunc {
 			return
 		}
 
-		logger.Log.Info(authHeader.Authorization)
-
 		authorization := strings.Split(authHeader.Authorization, " ")
 
 		if len(authorization) != 2 {

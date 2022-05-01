@@ -1,41 +1,42 @@
 package handlers_test
 
 import (
+	"encoding/base64"
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+	"time"
 
 	"github.com/MalukiMuthusi/pulseid/internal/handlers"
-	"github.com/MalukiMuthusi/pulseid/internal/store"
+	"github.com/MalukiMuthusi/pulseid/internal/models"
+	"github.com/MalukiMuthusi/pulseid/internal/store/mock"
 	"github.com/stretchr/testify/assert"
 )
 
 func TestInactive(t *testing.T) {
 
-	store := store.NewMockStore()
+	store := mock.NewStore()
 
 	type test struct {
 		Name     string
 		EndPoint string
 		Status   int
-		Resp     interface{}
+		Res      []*models.Token
 	}
-
-	happyCaseResp := map[string]interface{}{"message": "not implemented"}
 
 	tests := []test{
 		{
 			Name:     "happy case",
 			EndPoint: "/inactive",
-			Status:   http.StatusNotImplemented,
-			Resp:     happyCaseResp,
+			Status:   http.StatusOK,
 		},
 	}
 
 	for _, test := range tests {
-		t.Run(test.Name, func(t *testing.T) {
+		t.Run(test.Name, func(tt *testing.T) {
 
 			req, err := http.NewRequest(http.MethodGet, test.EndPoint, nil)
 			if err != nil {
@@ -44,25 +45,36 @@ func TestInactive(t *testing.T) {
 
 			w := httptest.NewRecorder()
 
-			router := handlers.SetUpRouter(store)
+			// Add Authorization Header
+
+			credentials := base64.StdEncoding.EncodeToString([]byte("username:password"))
+
+			req.Header.Add("Authorization", fmt.Sprintf("Basic %s", credentials))
+
+			router := handlers.SetUpRouter(store, DebugPrintRoute)
 
 			router.ServeHTTP(w, req)
 
-			assert.Equal(t, test.Status, w.Code)
+			assert.Equal(tt, test.Status, w.Code)
 
-			var res interface{}
+			var res []*models.Token
 
 			b, err := ioutil.ReadAll(w.Body)
 			if err != nil {
-				assert.Fail(t, "failed to read response")
+				assert.Fail(tt, "failed to read response")
 			}
 
 			err = json.Unmarshal(b, &res)
 			if err != nil {
-				assert.Fail(t, "failed to unMarshal response")
+				assert.Fail(tt, "failed to unMarshal response")
 			}
 
-			assert.EqualValues(t, test.Resp, res)
+			assert.Equal(tt, true, len(res) > 0)
+
+			for _, v := range res {
+				assert.Equal(tt, true, v.Recalled || time.Now().After(v.Expiry))
+			}
+
 		})
 	}
 }

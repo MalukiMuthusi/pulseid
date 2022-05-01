@@ -11,13 +11,13 @@ import (
 
 	"github.com/MalukiMuthusi/pulseid/internal/handlers"
 	"github.com/MalukiMuthusi/pulseid/internal/models"
-	"github.com/MalukiMuthusi/pulseid/internal/store"
+	"github.com/MalukiMuthusi/pulseid/internal/store/mock"
 	"github.com/stretchr/testify/assert"
 )
 
 func TestRecall(t *testing.T) {
 
-	store := store.NewMockStore()
+	store := mock.NewStore()
 
 	type test struct {
 		Name     string
@@ -53,7 +53,7 @@ func TestRecall(t *testing.T) {
 
 			w := httptest.NewRecorder()
 
-			router := handlers.SetUpRouter(store)
+			router := handlers.SetUpRouter(store, DebugPrintRoute)
 
 			router.ServeHTTP(w, req)
 

@@ -11,15 +11,16 @@ import (
 
 	"github.com/MalukiMuthusi/pulseid/internal/handlers"
 	"github.com/MalukiMuthusi/pulseid/internal/models"
-	"github.com/MalukiMuthusi/pulseid/internal/store"
+	"github.com/MalukiMuthusi/pulseid/internal/store/mock"
 	"github.com/stretchr/testify/assert"
 )
 
 func TestGenerate(t *testing.T) {
-	store := store.NewMockStore()
+	store := mock.NewStore()
+
 	assert.NotNil(t, store, "expected a valid data structure")
 
-	router := handlers.SetUpRouter(store)
+	router := handlers.SetUpRouter(store, DebugPrintRoute)
 
 	w := httptest.NewRecorder()
 
