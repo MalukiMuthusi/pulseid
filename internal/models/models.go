@@ -14,6 +14,10 @@ type TokenParameter struct {
 	Token string `uri:"token" binding:"required"`
 }
 
+type TokenValidity struct {
+	Validity bool `json:"validity"`
+}
+
 type BasicError struct {
 	Code    string `json:"code"`
 	Message string `json:"message"`

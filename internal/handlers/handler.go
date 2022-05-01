@@ -20,7 +20,9 @@ func SetUpRouter(store store.Store) *gin.Engine {
 	generateAPI.Use(auth.Middleware())
 	generateAPI.GET("", generate.Handle)
 
-	validate := Validate{}
+	validate := Validate{
+		Store: store,
+	}
 	r.GET("/validate/:token", validate.Handle)
 
 	recall := Recall{}

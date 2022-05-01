@@ -25,7 +25,7 @@ func (h Validate) Handle(c *gin.Context) {
 		return
 	}
 
-	_, err := h.Store.GetToken(c.Request.Context(), tokenParameter.Token)
+	token, err := h.Store.GetToken(c.Request.Context(), tokenParameter.Token)
 	if err != nil {
 		basicError := models.BasicError{
 			Code:    "TOKEN_NOT_FOUND",
@@ -35,5 +35,13 @@ func (h Validate) Handle(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, basicError)
 		return
 	}
+
+	validity := token.CheckValidity()
+
+	tokenValidity := models.TokenValidity{
+		Validity: validity,
+	}
+
+	c.JSON(http.StatusOK, tokenValidity)
 
 }

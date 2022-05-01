@@ -2,8 +2,10 @@ package store
 
 import (
 	"context"
+	"time"
 
 	"github.com/MalukiMuthusi/pulseid/internal/models"
+	"gorm.io/gorm"
 )
 
 type Store interface {
@@ -24,5 +26,9 @@ func (m MockStore) SaveToken(ctx context.Context, token *models.Token) (*models.
 }
 
 func (m MockStore) GetToken(ctx context.Context, tokenId string) (*models.Token, error) {
-	return &models.Token{}, nil
+	return &models.Token{
+		Model: gorm.Model{
+			CreatedAt: time.Now().AddDate(1, 0, 0),
+		},
+	}, nil
 }

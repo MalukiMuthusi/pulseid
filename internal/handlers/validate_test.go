@@ -23,16 +23,18 @@ func TestValidate(t *testing.T) {
 		Name     string
 		EndPoint string
 		Status   int
-		Resp     interface{}
+		Resp     models.TokenValidity
 	}
 
-	happyCaseResp := map[string]interface{}{"message": "not implemented"}
+	happyCaseResp := models.TokenValidity{
+		Validity: true,
+	}
 
 	tests := []test{
 		{
 			Name:     "happy case",
 			EndPoint: "/validate/some_unique_token",
-			Status:   http.StatusNotImplemented,
+			Status:   http.StatusOK,
 			Resp:     happyCaseResp,
 		},
 	}
@@ -53,7 +55,7 @@ func TestValidate(t *testing.T) {
 
 			assert.Equal(t, test.Status, w.Code)
 
-			var res interface{}
+			var res models.TokenValidity
 
 			b, err := ioutil.ReadAll(w.Body)
 			if err != nil {
