@@ -12,7 +12,7 @@ func (m MysqlDB) Active(ctx context.Context) ([]*models.Token, error) {
 
 	var tokens []*models.Token
 
-	res := m.Db.Where("recalled = ? AND expiry < ?", false, time.Now()).Find(&tokens)
+	res := m.Db.Where("recalled = ? AND expiry > ?", false, time.Now()).Find(&tokens)
 
 	if res.Error != nil {
 		logger.Log.Info(res.Error)
