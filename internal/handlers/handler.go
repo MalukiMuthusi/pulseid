@@ -2,18 +2,20 @@ package handlers
 
 import (
 	"github.com/MalukiMuthusi/pulseid/internal/logger"
+	"github.com/MalukiMuthusi/pulseid/internal/store"
 	"github.com/gin-gonic/gin"
 	"github.com/sirupsen/logrus"
 )
 
-func SetUpRouter() *gin.Engine {
+func SetUpRouter(store store.Store) *gin.Engine {
+
 	r := gin.New()
 
 	gin.DebugPrintRouteFunc = DebugPrintRoute
 
 	auth := Auth{}
 
-	generate := Generate{}
+	generate := Generate{Store: store}
 	generateAPI := r.Group("/generate")
 	generateAPI.Use(auth.Middleware())
 	generateAPI.GET("", generate.Handle)

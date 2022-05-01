@@ -10,11 +10,16 @@ import (
 	"testing"
 
 	"github.com/MalukiMuthusi/pulseid/internal/handlers"
+	"github.com/MalukiMuthusi/pulseid/internal/models"
+	"github.com/MalukiMuthusi/pulseid/internal/store"
 	"github.com/stretchr/testify/assert"
 )
 
 func TestGenerate(t *testing.T) {
-	router := handlers.SetUpRouter()
+	store := store.NewMockStore()
+	assert.NotNil(t, store, "expected a valid data structure")
+
+	router := handlers.SetUpRouter(store)
 
 	w := httptest.NewRecorder()
 
@@ -29,11 +34,9 @@ func TestGenerate(t *testing.T) {
 
 	router.ServeHTTP(w, req)
 
-	assert.Equal(t, http.StatusNotImplemented, w.Code)
+	assert.Equal(t, http.StatusOK, w.Code)
 
-	expectedRes := map[string]interface{}{"message": "not implemented"}
-
-	var res interface{}
+	var res models.Token
 
 	b, err := ioutil.ReadAll(w.Body)
 
@@ -46,5 +49,7 @@ func TestGenerate(t *testing.T) {
 		assert.Fail(t, "failed to unMarshal response")
 	}
 
-	assert.EqualValues(t, expectedRes, res)
+	assert.NotNil(t, res, "expected a valid data structure")
+
+	assert.EqualValues(t, res.ID, 0)
 }
