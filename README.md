@@ -51,6 +51,8 @@ The user workflow is as follow
 
 ## Implementation Server
 
+The app follows the [Twelve-Factor-App-Principles](https://12factor.net/)
+
 ### Authentication
 
 The service uses the basic Authorization scheme.
