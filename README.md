@@ -53,6 +53,21 @@ The user workflow is as follow
 
 The app follows the [Twelve-Factor-App-Principles](https://12factor.net/)
 
+### Environment variables
+
+```sh
+# database configurations
+export PULSE_ENV="dev"
+export PULSE_DB_USER="root"
+export PULSE_DB_PWD=""
+export PULSE_DB_NAME="pulse"
+export PULSE_DB_PORT="3306"
+export PULSE_DB_CLOUD=false
+export PULSE_DB_HOST="127.0.0.1"
+export PULSE_DB_TIMEZONE="Africa/Nairobi"
+export PULSE_DB_INSTANCE_CONNECTION_NAME="theta-outrider-342406:us-central1:wallet"
+```
+
 ### Authentication
 
 The service uses the basic Authorization scheme.
